@@ -1,0 +1,11 @@
+node_modules
+dist
+.nitro
+.vercel
+.output
+*.log
+.DS_Store
+
+# Environment variables
+.env
+.env.local
