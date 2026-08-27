@@ -5,28 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '22'
-      
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Set Nitro preset
-        run: echo "NITRO_PRESET=node_server" >> $GITHUB_ENV
-      
-      - name: Build app
-        run: npm run build
-
   docker:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
